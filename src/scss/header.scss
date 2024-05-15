@@ -46,7 +46,7 @@
     @extend %fs16-14;
     @extend %hoverLink;
     &._active {
-      color: $purple;
+      color: #985afc;
     }
     @media (max-width:$mobile){
        display: none; 

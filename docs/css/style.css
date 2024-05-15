@@ -297,7 +297,7 @@ body::-webkit-scrollbar-track {
   height: auto
 }
 .header__link._active {
-  color: #d2baf9
+  color: #985afc
 }
 .menu {
   display: flex;
