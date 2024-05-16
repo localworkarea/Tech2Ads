@@ -6,7 +6,7 @@
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="css/style.min.css?_v=20240515132806">
+	<link rel="stylesheet" href="css/style.min.css?_v=20240516180335">
 	<link rel="shortcut icon" href="favicon.ico">
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -82,6 +82,54 @@
 			</div>
 		</header>
 		<main class="page">
+			<section class="login">
+				<div class="login__container">
+					<h1 class="login__title">
+						<img class="ibg ibg--contain" src="img/icons/logo.svg" width="266" height="112" alt="logo tech2ads">
+					</h1>
+					<form data-ajax class="form-c" action="" method="POST">
+						<div class="input__item">
+							<input type="text" name="form[email]" placeholder="Ваш Логін" class="input">
+						</div>
+						<div class="input__item">
+							<input type="password" name="form[password]" placeholder="Пароль" class="input">
+							<button type="button" class="input__viewpass" aria-label="Показати пароль">
+								<img src="img/icons/eye.webp" width="20" height="20" alt="icon eye">
+							</button>
+						</div>
+						<button type="submit" class="submit btn">
+							<span class="btn__arr">
+								<svg width="16" height="8" viewBox="0 0 16 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M12.1716 0.46447L15.3536 3.64645C15.5488 3.84171 15.5488 4.1583 15.3536 4.35356L12.1716 7.53554C11.9763 7.7308 11.6597 7.7308 11.4645 7.53554C11.2692 7.34028 11.2692 7.02369 11.4645 6.82843L13.7929 4.5H0V3.5H13.7929L11.4645 1.17158C11.2692 0.976315 11.2692 0.659733 11.4645 0.46447C11.6597 0.269208 11.9763 0.269208 12.1716 0.46447Z" fill="white" />
+								</svg>
+							</span>
+							<span class="btn__txt">
+								Зайти
+							</span>
+						</button>
+					</form>
+					<p class="login__txt">
+						Для реєстрації аккаунту на платформі Tech2Ads напишіть нам будь яким зручним для вас способом
+					</p>
+					<ul class="contacts__list">
+						<li class="contacts__item">
+							<a href="#" class="contacts__link" aria-label="посилання на соцмережу viber">
+								<img class="ibg ibg--contain" src="img/icons/viber-dark.webp" width="42" height="42" alt="іконка Viber">
+							</a>
+						</li>
+						<li class="contacts__item">
+							<a href="#" class="contacts__link" aria-label="посилання на соцмережу telegram">
+								<img class="ibg ibg--contain" src="img/icons/telegram-dark.webp" width="42" height="42" alt="іконка telegram">
+							</a>
+						</li>
+						<li class="contacts__item">
+							<a href="#" class="contacts__link" aria-label="посилання на соцмережу whatsapp">
+								<img class="ibg ibg--contain" src="img/icons/whatsapp-dark.webp" width="42" height="42" alt="іконка whatsapp">
+							</a>
+						</li>
+					</ul>
+				</div>
+			</section>
 		</main>
 		<footer class="footer">
 			<div class="footer__container">
@@ -190,7 +238,7 @@
 			</div>
 		</footer>
 	</div>
-	<script src="js/app.min.js?_v=20240515132806"></script>
+	<script src="js/app.min.js?_v=20240516180335"></script>
 </body>
 
 </html>

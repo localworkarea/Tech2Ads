@@ -46,6 +46,54 @@
   }
 }
 
+%beforeImgEl2 {
+  position: relative;
+  z-index: 2;
+  &::before {
+    @media (min-width:$mobileSmall){
+      content:'';
+      position: absolute;
+      z-index: -1;
+      background-repeat: no-repeat;
+      background-size: contain;
+      top: 0;
+      left: 0;
+      transform: translate(-100%,0%) rotate(17deg);
+      width: toRem(300);
+      height: toRem(320);
+      background-image: url('../img/icons/el-2.svg');
+    }
+    @media (max-width:$mobileSmall){
+      display: none;
+    }
+  }
+}
+
+%btnMarginInline {
+  @media (min-width:$mobileSmall){
+    margin-inline: auto;
+  }
+}
+
+%itemGridGradient {
+  @include adaptiveValue("padding-top", 46, 27,0,900.98,480.98);
+  @include adaptiveValue("padding-bottom", 46, 40,0,900.98,480.98);
+  @include adaptiveValue("padding-left", 26, 18,0,900.98,480.98);
+  @include adaptiveValue("padding-right", 26, 14,0,900.98,480.98);
+  border: toRem(1) solid rgba(39, 39, 39, 0.4);
+  span {
+    display: inline-block;
+    font-size: toRem(24);
+    font-weight: 700;
+    &:not(:last-child) {
+      margin-bottom: toRem(20);
+    }
+  }
+  p {
+    max-width: toRem(140);
+  }
+}
+
 .page {
   @include adaptiveValue("padding-top", 49, 45,0,1920,1366.98);
 }
@@ -86,9 +134,11 @@
   width: fit-content;
   min-width: toRem(184);
   max-width: min-content;
+  height: fit-content;
   position: relative;
   z-index: 2;
   padding-left: toRem(10);
+  color: $mainColor;
   &::before,
   &::after {
     content:'';
@@ -143,4 +193,20 @@
     font-weight: 700;
     transition: color .45s ease 0.1s;
   }
+}
+
+.item-bl {
+  background-color:$black;
+  color: #fff;
+}
+.item-grad {
+  color: #fff;
+  background-image: linear-gradient(150deg, #d2baf9 42%, #ed7166 100%);
+}
+.item-grad-rev {
+  color: #fff;
+  background-image: linear-gradient(320deg, #d2baf9 42%, #ed7166 100%);
+}
+.item-wht {
+  background-color:#fff;
 }

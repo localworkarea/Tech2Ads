@@ -18,9 +18,55 @@
 				"blog":""
 			})
 			<main class="page">
+				<section class="about">
+					<div class="about__container">
+						<img class="about__img ibg" src="@img/article/image-01.png" width="887" height="176" alt="Image">
+						<h1 class="about__title">
+							Про нашу компанію
+						</h1>
+						<p>
+							Ми розпочали діяльність як агенція ще у 2016 році та спеціалізувались на запуску ефективних рекламних кампаній в Google та Facebook. Зіткнувшись з численними викликами, ми набули дорогоцінний досвід, який відтоді допомагає нам в подальшому розвитку.
+						</p>
+						<p>
+							Наша компанія Tech2Ads була заснована 24 квітня 2021 року. В цей період, ми почали надавати агентські кабінети іншим маркетинговим агенціям. Спочатку це була просто ідея, але потім ми взялись за це з максимальною серйозністю та відповідальністю. Все почалося зі співпраці з Meta, потім додали Google, а надалі ми розгорнули діяльність й на всі інші платформи та розширили спектр можливостей. Відкрутивши значні бюджети (понад 30 мільйонів доларів в загальній сумі), ми познайомилися з представниками Мета. У 2023 році ми успішно продали агенцію заради нових починань та звершень. 
+						</p>
+						<p>
+							Ми розробили власну інноваційну IT-платформу для управління рекламою та продовжуємо активно рости, впроваджуючи нові стратегії та технології. З нами співпрацює велика кількість маркетингових агенцій, тому ви можете ознайомитися з умовами та приєднатися до нашої платформи, яка дозволить збільшити прибуток. 
+						</p>
+						<form data-dev class="form-d" data-popup-message="#popupMsgTwo" action="" method="POST">
+							<div class="input__item">
+								<input type="email" name="form[email]" data-error="Обов'зкове поле" placeholder="Ваша Пошта" class="input" data-required>
+							</div>
+							<div class="input__item">
+								<input type="text" name="form[name]" data-error="Обов'зкове поле" placeholder="Ваше Ім'я" class="input" data-required>
+							</div>
+							<div class="input__item">
+								<textarea name="form[text]"  data-error="Обов'зкове поле" placeholder="Ваше питання" class="input" data-required></textarea>
+							</div>
+							<div class="item__block">
+								<div class="input__item input__item-check">
+									<input id="formCheckBox" type="checkbox"  name="agree" class="input__check-box" required>
+									<label for="formCheckBox">Я приймаю та погоджуюсь з <a href="privacy.html" aria-label="на сторінку Політики конфіденційності">Політикою конфіденційності сайту</a>
+									</label>
+								</div>
+								<button type="submit" class="submit btn">
+									<span class="btn__arr">
+										<svg width="16" height="8" viewBox="0 0 16 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+											<path fill-rule="evenodd" clip-rule="evenodd" d="M12.1716 0.46447L15.3536 3.64645C15.5488 3.84171 15.5488 4.1583 15.3536 4.35356L12.1716 7.53554C11.9763 7.7308 11.6597 7.7308 11.4645 7.53554C11.2692 7.34028 11.2692 7.02369 11.4645 6.82843L13.7929 4.5H0V3.5H13.7929L11.4645 1.17158C11.2692 0.976315 11.2692 0.659733 11.4645 0.46447C11.6597 0.269208 11.9763 0.269208 12.1716 0.46447Z" fill="white"/>
+										</svg>
+									</span>
+									<span class="btn__txt">
+										Зв'язатися з нами
+									</span>
+								</button>
+							</div>
+						</form>
+					</div>
+				</section>
 			</main>
 			@@include('html/_footer.htm',{})
 		</div>
+		@@include('html/_popup-msg-2.htm',{})
 		@@include('html/_js.htm',{})
 	</body>
 </html>

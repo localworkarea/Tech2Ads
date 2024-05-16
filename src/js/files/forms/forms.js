@@ -37,15 +37,26 @@ export function formFieldsInit(options = { viewPass: false, autoHeight: false })
 	});
 	// Якщо увімкнено, додаємо функціонал "Показати пароль"
 	if (options.viewPass) {
-		document.addEventListener("click", function (e) {
-			let targetElement = e.target;
-			if (targetElement.closest('[class*="__viewpass"]')) {
-				let inputType = targetElement.classList.contains('_viewpass-active') ? "password" : "text";
-				targetElement.parentElement.querySelector('input').setAttribute("type", inputType);
-				targetElement.classList.toggle('_viewpass-active');
-			}
-		});
+    document.addEventListener("click", function (e) {
+        let targetElement = e.target.closest('.input__viewpass');
+        if (targetElement) {
+            // Найдем родительский элемент, содержащий input и кнопку
+            let inputContainer = targetElement.closest('.input__item');
+            if (inputContainer) {
+                // Найдем input в этом контейнере
+                let input = inputContainer.querySelector('input[type="password"], input[type="text"]');
+                if (input) {
+                    // Переключим тип input между 'password' и 'text'
+                    let inputType = input.getAttribute("type") === "password" ? "text" : "password";
+                    input.setAttribute("type", inputType);
+                    // Переключим класс для кнопки
+                    targetElement.classList.toggle('_viewpass-active');
+                }
+            }
+        }
+    });
 	}
+
 	// Якщо увімкнено, додаємо функціонал "Автовисота"
 	if (options.autoHeight) {
 		const textareas = document.querySelectorAll('textarea[data-autoheight]');

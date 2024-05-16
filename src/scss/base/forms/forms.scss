@@ -1,20 +1,182 @@
-//<FORM>
-// Сніппет (HTML):
-.form {
-	&__row {
+//<INPUT>
+// Сніппет (HTML): inp
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+textarea {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+}
+.input {
+	border-radius: 0 !important;
+	width: 100%;
+	display: block;
+	padding: 0px toRem(12);
+	border: toRem(1) solid rgba(39, 39, 39, 0.4);
+	background-color:#fff;
+	caret-color: inherit;
+	color: $mainColor;
+	outline: none;
+	min-height: toRem(50);
+	@media (min-width:$mobileSmall){
+		font-size: toRem(14);
 	}
-	&__column {
+	&._form-focus {
 	}
-	&__line {
-	}
-	&__input {
-	}
-	&__button {
-	}
-	&__error {
+	&._form-error {
 	}
 }
-//</FORM>
+.input[placeholder]:not([data-placeholder-nohiden]) {
+	&::placeholder {
+		transition: opacity 0.3s;
+	}
+	&:focus::placeholder {
+		opacity: 0;
+	}
+}
+
+textarea.input {
+	resize: none;
+	padding: toRem(19) toRem(12) 0;
+	min-height: toRem(81);
+}
+
+.input {
+	// .input__item
+	&__item {
+		position: relative;
+	}
+	// .input__item-check 
+	&__item-check {
+		display: flex;
+		align-items: center;
+		gap: toRem(10);
+		@media (min-width:$mobileSmall){
+			font-size: toRem(12);
+		}
+		a {
+			text-decoration: underline;
+		}
+	}
+	// .input__check-box
+	&__check-box {
+		flex: 0 0 auto;
+		accent-color: #000;
+		@media (min-width:$mobileSmall){
+			width: toRem(13);
+			height: toRem(13);
+		}
+		@media (max-width:$mobileSmall){
+			width: toRem(16);
+			height: toRem(16);
+		}
+	}
+	// .input__viewpass
+	&__viewpass {
+		position: absolute;
+		top: 0;
+		right: 0;
+		z-index: 2;
+		width: toRem(50);
+		height: toRem(50);
+		&::before {
+			content: '';
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%,-50%) rotate(-40deg);
+			width: toRem(25);
+			height: toRem(2);
+			background-color:$mainColor;
+		}
+		&._viewpass-active {
+			&::before {
+				opacity: 0;
+			}
+		}
+	}
+}
+
+.form__error {
+	position: absolute;
+	top: toRem(5);
+	right: toRem(5);
+	font-size: toRem(12);
+	color:red;
+}
+
+.submit {
+	text-align: left;
+}
+
+form._sending {
+	button {
+		pointer-events: none;
+		opacity: 0.6;
+	}
+}
+
+.form-a {
+	.input__item {
+		margin-bottom: toRem(30);
+		@media (min-width: toEm(600.98)){
+			max-width: toRem(197);
+		}
+	}
+	.input {
+	}
+}
+
+.form-b {
+	.input__item {
+		&:not(:last-child) {
+			margin-bottom: toRem(10);
+		}
+	}
+	.submit {
+		margin-top: toRem(20);
+	}
+}
+
+.form-c {
+}
+
+.form-d {
+  display: grid;
+  gap: toRem(10);
+  @media (min-width:toEm(700.98)){
+    grid-template-columns: repeat(4,1fr);
+  }
+  @media (max-width: toEm(700.98)) and (min-width:$mobileSmall) {
+    grid-template-columns: repeat(2,1fr);
+  }
+  textarea {
+  	@media (min-width:toEm(700.98)){
+  	  min-height: toRem(50);
+  	}
+  }
+  .item__block {
+    display: grid;
+    @media (min-width:$mobileSmall){
+      gap: toRem(7);
+    }
+    @media (max-width:$mobileSmall){
+      gap: toRem(20)        
+    }
+    .input__item-check {
+      @media (min-width:$mobileSmall){
+         order: 2; 
+      }
+    }
+    .submit {
+      @media (min-width:$mobileSmall){
+         order: 1; 
+      }
+    }
+  }
+}
+
 
 // <BUTTONS>
 // Сніппет (HTML): btn

@@ -51,11 +51,30 @@ body::after {
 	transform: scale(0);
 	transition: transform 0.3s ease 0s;
 	background-color: #eee;
-	padding: 20px;
 	width: 100%;
-	max-width: 900px;
-	border-radius: 20px;
+	max-width: toRem(900);
+	position: relative;
+	.popup-msg & {
+		max-width: toRem(500);
+		padding: toRem(60) toRem(30);
+		border: toRem(1) solid rgba(39, 39, 39, 0.6);
+	}
+	.popup__close {
+		position: absolute;
+		top: toRem(10);
+		right: toRem(10);
+		outline: none;
+	}
 	.lock & {
 		visibility: visible;
+	}
+}
+
+.popup-msg {
+	.popup__text {
+		text-align: center;
+		font-size: toRem(22);
+		font-weight: 700;
+		line-height: 1.2;
 	}
 }

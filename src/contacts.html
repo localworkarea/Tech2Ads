@@ -18,9 +18,80 @@
 				"blog":""
 			})
 			<main class="page">
+				<section class="contacts">
+					<div class="contacts__container">
+						<div class="contacts__info">
+							<h1 class="contacts__title">
+								Контакти
+							</h1>
+							<p class="contacts__txt">
+								Підтримка існуючих клієнтів
+							</p>
+							<a href="mailto:support@tech2ads.com" class="contacts__mail" aria-label="посилання на поштовий клієнт для написання повідомлення у підтримку клієнтів">
+								support@tech2ads.com
+							</a>
+							<p class="contacts__txt">
+								Підключення нових маркетингових агенцій до платформи
+							</p>
+							<a href="mailto:sale@tech2ads.com" class="contacts__mail" aria-label="посилання на поштовий клієнт для написання повідомлення щодо підключення нових маркетингових агенцій до платформи">
+								sale@tech2ads.com
+							</a>
+							<ul class="contacts__list">
+								<li class="contacts__item">
+									<a href="#" class="contacts__link" aria-label="посилання на соцмережу viber">
+										<img class="ibg ibg--contain" src="@img/icons/viber-dark.png" width="42" height="42" alt="іконка Viber">
+									</a>
+								</li>
+								<li class="contacts__item">
+									<a href="#" class="contacts__link" aria-label="посилання на соцмережу telegram">
+										<img class="ibg ibg--contain" src="@img/icons/telegram-dark.png" width="42" height="42" alt="іконка telegram">
+									</a>
+								</li>
+								<li class="contacts__item">
+									<a href="#" class="contacts__link" aria-label="посилання на соцмережу whatsapp">
+										<img class="ibg ibg--contain" src="@img/icons/whatsapp-dark.png" width="42" height="42" alt="іконка whatsapp">
+									</a>
+								</li>
+							</ul>
+							<address class="contacts__addr">
+								<span>Адреса</span>
+								<p>Office 506, The Old Bank, 153 The Parade, High Street, Watford, Herts, United Kingdom, WD17 1NA</p>
+							</address>
+						</div>
+						<div class="contacts__form">
+							<form data-dev class="form-b" data-popup-message="#popupMsgTwo" action="" method="POST">
+								<div class="input__item">
+									<input type="email" name="form[email]" data-error="Обов'зкове поле" placeholder="Ваша Пошта" class="input" data-required>
+								</div>
+								<div class="input__item">
+									<input type="text" name="form[name]" data-error="Обов'зкове поле" placeholder="Ваше Ім'я" class="input" data-required>
+								</div>
+								<div class="input__item">
+									<textarea name="form[text]"  data-error="Обов'зкове поле" placeholder="Ваше питання" class="input" data-required></textarea>
+								</div>
+								<div class="input__item input__item-check">
+									<input id="formCheckBox" type="checkbox"  name="agree" class="input__check-box" required>
+									<label for="formCheckBox">Я приймаю та погоджуюсь з <a href="privacy.html" aria-label="на сторінку Політики конфіденційності">Політикою конфіденційності сайту</a>
+									</label>
+								</div>
+								<button type="submit" class="submit btn">
+									<span class="btn__arr">
+										<svg width="16" height="8" viewBox="0 0 16 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+											<path fill-rule="evenodd" clip-rule="evenodd" d="M12.1716 0.46447L15.3536 3.64645C15.5488 3.84171 15.5488 4.1583 15.3536 4.35356L12.1716 7.53554C11.9763 7.7308 11.6597 7.7308 11.4645 7.53554C11.2692 7.34028 11.2692 7.02369 11.4645 6.82843L13.7929 4.5H0V3.5H13.7929L11.4645 1.17158C11.2692 0.976315 11.2692 0.659733 11.4645 0.46447C11.6597 0.269208 11.9763 0.269208 12.1716 0.46447Z" fill="white"/>
+										</svg>
+									</span>
+									<span class="btn__txt">
+										Зв'язатися з нами
+									</span>
+								</button>
+							</form>
+						</div>
+					</div>
+				</section>
 			</main>
 			@@include('html/_footer.htm',{})
 		</div>
+		@@include('html/_popup-msg-2.htm',{})
 		@@include('html/_js.htm',{})
 	</body>
 </html>
