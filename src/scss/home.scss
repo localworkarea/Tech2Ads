@@ -17,7 +17,8 @@
   display: flex;
   align-items: center;
   @include adaptiveValue("padding-top", 100, 70,0,1200.98,480.98);
-  @include adaptiveValue("padding-bottom", 100, 50,0,1200.98,480.98);
+  padding-bottom: toRem(50);
+  // @include adaptiveValue("padding-bottom", 100, 50,0,1200.98,480.98);
   min-height: 100%;
  }
 
@@ -745,6 +746,7 @@
 // == REFILL ========================
 .refill {
   // padding-bottom: toRem(100);
+  &.refill--grid-2 {}
   // .refill__container
   &__container {
   }
@@ -792,6 +794,54 @@
        margin-inline: auto; 
     }
 	}
+}
+
+.refill {
+  &.refill--grid-2 {
+    .title-ac {
+      @media (max-width:$mobileSmall){
+         margin-bottom: toRem(20) !important; 
+      }
+    }
+    .block-txt__body {
+      @media (max-width:$mobileSmall){
+         margin-bottom: toRem(20); 
+         p {
+          font-size: toRem(12) !important;
+         }
+      }
+    }
+    .refill__txt {
+      @media (max-width:$mobileSmall){
+         font-size: toRem(12) !important; 
+      }
+    }
+  }
+  .refill__list {
+    &.grid-2 {
+      @media (max-width:$mobileSmall){
+        gap: toRem(8) !important;
+         &:not(:last-child) {
+          margin-bottom: toRem(20) !important;
+         }
+      }
+      .refill__item {
+        @media (max-width:$mobileSmall){
+           padding-top: toRem(12) !important; 
+           padding-bottom: toRem(12) !important; 
+           span {
+            font-size: toRem(18) !important;
+            &:not(:last-child) {
+              margin-bottom: toRem(8) !important;
+            }
+           }
+           p {
+            font-size: toRem(12) !important;
+           }
+        }
+      }
+    }
+  }
 }
 
 // == HOW ========================

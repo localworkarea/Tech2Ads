@@ -111,14 +111,14 @@
   -webkit-text-fill-color: transparent;
   background-image: linear-gradient(152deg, #ed7166 11.5%, #d2baf9 100%);
   font-weight: 700;
-  @include adaptiveValue("font-size", 70, 36,0,1200.98,360.98);
+  @include adaptiveValue("font-size", 70, 36,0,1200.98,480.98);
   line-height: 1.1;
   @extend %letter-spacing;
   @media (min-width:$mobileSmall){
      text-align: center; 
   }
   &:not(:last-child) {
-    @include adaptiveValue("margin-bottom", 50,30,0,1200.98,360.98);
+    @include adaptiveValue("margin-bottom", 50,30,0,1200.98,480.98);
   }
 }
 
