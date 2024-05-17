@@ -43,6 +43,9 @@ textarea.input {
 }
 
 .input {
+	&.input__pass {
+		padding-right: toRem(50);
+	}
 	// .input__item
 	&__item {
 		position: relative;

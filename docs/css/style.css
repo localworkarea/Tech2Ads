@@ -188,6 +188,9 @@ textarea.input {
   padding: 1.1875rem .75rem 0;
   min-height: 5.0625rem
 }
+.input.input__pass {
+  padding-right: 3.125rem
+}
 .input__item {
   position: relative
 }
@@ -335,6 +338,44 @@ body::after {
   font-size: 1.375rem;
   font-weight: 700;
   line-height: 1.2
+}
+.fp-init body {
+  overflow: hidden;
+  touch-action: none;
+  -ms-scroll-chaining: none;
+  overscroll-behavior: none
+}
+[data-fp] {
+  min-height: 100vh;
+  min-height: 100svh
+}
+.fp-init [data-fp] {
+  z-index: 1;
+  touch-action: none;
+  position: relative;
+  overflow: hidden
+}
+.fp-switching [data-fp-section] {
+  touch-action: none
+}
+.fp-init [data-fp-section] {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto
+}
+.fp-init .cards-mode [data-fp-section],
+.fp-init .slider-mode [data-fp-section] {
+  transition: -webkit-transform .7s cubic-bezier(.55,.085,0,.99) 0s;
+  transition: transform .7s cubic-bezier(.55,.085,0,.99) 0s;
+  transition: transform .7s cubic-bezier(.55,.085,0,.99) 0s,-webkit-transform .7s cubic-bezier(.55,.085,0,.99) 0s
+}
+.fp-init .fade-mode [data-fp-section] {
+  transition: opacity .5s ease-in-out 0s,visibility .5s ease-in-out 0s
 }
 .ibg {
   width: 100%;
@@ -754,11 +795,62 @@ body::after {
   align-items: center;
   gap: .625rem
 }
-.hero__container {
+.fp-sec-00::-webkit-scrollbar,
+.fp-sec-01::-webkit-scrollbar,
+.fp-sec-02::-webkit-scrollbar,
+.fp-sec-03::-webkit-scrollbar,
+.fp-sec-04::-webkit-scrollbar,
+.fp-sec-05::-webkit-scrollbar,
+.fp-sec-06::-webkit-scrollbar,
+.fp-sec-07::-webkit-scrollbar,
+.fp-sec-08::-webkit-scrollbar {
+  width: 6px
+}
+.fp-sec-00::-webkit-scrollbar-thumb,
+.fp-sec-01::-webkit-scrollbar-thumb,
+.fp-sec-02::-webkit-scrollbar-thumb,
+.fp-sec-03::-webkit-scrollbar-thumb,
+.fp-sec-04::-webkit-scrollbar-thumb,
+.fp-sec-05::-webkit-scrollbar-thumb,
+.fp-sec-06::-webkit-scrollbar-thumb,
+.fp-sec-07::-webkit-scrollbar-thumb,
+.fp-sec-08::-webkit-scrollbar-thumb {
+  background-color: #000;
+  border-radius: 15px
+}
+.fp-sec-00::-webkit-scrollbar-track,
+.fp-sec-01::-webkit-scrollbar-track,
+.fp-sec-02::-webkit-scrollbar-track,
+.fp-sec-03::-webkit-scrollbar-track,
+.fp-sec-04::-webkit-scrollbar-track,
+.fp-sec-05::-webkit-scrollbar-track,
+.fp-sec-06::-webkit-scrollbar-track,
+.fp-sec-07::-webkit-scrollbar-track,
+.fp-sec-08::-webkit-scrollbar-track {
+  background-color: #fff
+}
+.fp-sec-00 section,
+.fp-sec-01 section,
+.fp-sec-02 section,
+.fp-sec-03 section,
+.fp-sec-04 section,
+.fp-sec-05 section,
+.fp-sec-06 section,
+.fp-sec-07 section,
+.fp-sec-08 section {
+  overflow: hidden;
   padding-top: 6.25rem;
-  padding-bottom: 8.75rem;
+  min-height: 100%
+}
+.hero {
+  display: flex;
+  align-items: center
+}
+.hero__container {
   position: relative;
-  z-index: 2
+  z-index: 2;
+  padding-top: 6.25rem;
+  padding-bottom: 6.25rem
 }
 .hero__container .title-main {
   margin-bottom: 2.5rem
@@ -789,9 +881,6 @@ body::after {
 }
 .hero__head .txt-main {
   text-align: left
-}
-.platforms {
-  padding-bottom: 6.25rem
 }
 .platforms__title {
   -webkit-background-clip: text;
@@ -861,7 +950,6 @@ body::after {
   border: .0625rem solid rgba(22,21,21,.4)
 }
 .num__container {
-  padding-bottom: 6.25rem;
   position: relative;
   z-index: 2
 }
@@ -898,6 +986,8 @@ body::after {
   object-fit: contain
 }
 .block-a {
+  display: flex;
+  align-items: center;
   background: linear-gradient(140deg,#ed7166 0,#d2baf9 60.5%)
 }
 .block-a__container {
@@ -1901,6 +1991,9 @@ body::after {
   .platforms__more {
     font-size: 1rem
   }
+  .num__container {
+    padding-bottom: 6.25rem
+  }
   .block-a__container {
     padding-top: 6.25rem
   }
@@ -2291,6 +2384,9 @@ body::after {
   .platforms__more {
     font-size: .875rem
   }
+  .num__container {
+    padding-bottom: 3.125rem
+  }
   .block-a__container {
     padding-top: 4.375rem
   }
@@ -2597,6 +2693,16 @@ body::after {
   @supports not (font-size:clamp(0.875rem ,0.8212827381rem + 0.2380952381vw ,1rem)) {
     .platforms__more {
       font-size: calc(.875rem + .125 * (100vw - 22.56125rem)/ 52.5)
+    }
+  }
+  @supports (padding-bottom:clamp(3.125rem ,1.7820684524rem + 5.9523809524vw ,6.25rem)) {
+    .num__container {
+      padding-bottom: clamp(3.125rem ,1.7820684524rem + 5.9523809524vw ,6.25rem)
+    }
+  }
+  @supports not (padding-bottom:clamp(3.125rem ,1.7820684524rem + 5.9523809524vw ,6.25rem)) {
+    .num__container {
+      padding-bottom: calc(3.125rem + 3.125 * (100vw - 22.56125rem)/ 52.5)
     }
   }
   @supports (padding-top:clamp(4.375rem ,3.5692410714rem + 3.5714285714vw ,6.25rem)) {
