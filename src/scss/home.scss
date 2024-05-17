@@ -61,6 +61,12 @@
       }
     }
     .title-main {
+      span {
+        color: $purple;
+        @media (max-width:$mobileSmall){
+           display: block; 
+        }
+      }
       @media (min-width:$mobileSmall){
          text-align: center; 
       }

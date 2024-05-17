@@ -156,9 +156,10 @@
 
 .lang {
   position: relative;
-  @extend %fs16-14;
+  // @extend %fs16-14;
+  font-size: toRem(14);
   &._lng-open {
-
+    
   }
   // .lang__button
   &__button {
@@ -166,11 +167,33 @@
     z-index: 2;
     display: flex;
     align-items: center;
+    justify-content: space-between;
     gap:  toRem(6);
+    padding: toRem(1) toRem(1) toRem(1) toRem(10);
+    border: toRem(1) solid $black;
+    @media (min-width:toEm(350.98)){
+      min-width: toRem(160);
+    }
+    @media (max-width: toEm(350.98)){
+      min-width: toRem(130);
+    }
   }
   // .lang__lng
   &__lng {
   }
+	// .lang__countries
+	&__countries {
+    display: none;
+    ._lng-open & {
+      display: block;
+    }
+	}
+	// .lang__current
+	&__current {
+    ._lng-open & {
+      display: none;
+    }
+	}
   // .lang__ic
   &__ic {
     display: flex;
@@ -199,8 +222,7 @@
     right: 0;
     background-color: #fff;
     border: toRem(1) solid $black;
-    padding: toRem(30) toRem(10) toRem(10);
-    min-width: calc(toRem(130) + toRem(10));
+    min-width: 100%;
     
     
     opacity: 0;
@@ -209,6 +231,12 @@
     ._lng-open & {
       opacity: 1;
       pointer-events: all;
+    }
+    @media (min-width:toEm(350.98)){
+      padding: toRem(40) toRem(10) toRem(10);
+    }
+    @media (max-width: toEm(350.98)){
+      padding: toRem(40) toRem(5) toRem(10);
     }
   }
   // .lang__item
@@ -220,9 +248,42 @@
   // .lang__link
   &__link {
     display: inline-block;
-    @extend %fs16-14;
-    @extend %hoverLink;
+    // @extend %fs16-14;
+    font-size: toRem(14);
+    padding-left: toRem(17);
+    // @extend %hoverLink;
     text-align: center;
+    position: relative;
+    &._active {
+      &::after {
+        opacity: 1;
+      }
+    }
+    &::before,
+    &::after {
+      content:'';
+      position: absolute;
+      z-index: -1;
+      border-radius: 50%;
+    }
+    &::before {
+      left: 0;
+      top: toRem(-1);
+      width: toRem(12);
+      height: toRem(12);
+      border: toRem(1) solid $black;
+    }
+    &::after {
+      left: 3px;
+      top: 2px;
+      width: toRem(6);
+      height: toRem(6);
+      background-color: $black;
+      opacity: 0;
+    }
+    @media (max-width: toEm(350.98)){
+      padding-left: toRem(15);
+    }
   }
 }
 
