@@ -76,8 +76,8 @@
 }
 
 %itemGridGradient {
-  @include adaptiveValue("padding-top", 46, 27,0,900.98,480.98);
-  @include adaptiveValue("padding-bottom", 46, 40,0,900.98,480.98);
+  @include adaptiveValue("padding-top", 46, 25,0,900.98,480.98);
+  @include adaptiveValue("padding-bottom", 46, 35,0,900.98,480.98);
   @include adaptiveValue("padding-left", 26, 18,0,900.98,480.98);
   @include adaptiveValue("padding-right", 26, 14,0,900.98,480.98);
   border: toRem(1) solid rgba(39, 39, 39, 0.4);
@@ -86,7 +86,7 @@
     font-size: toRem(24);
     font-weight: 700;
     &:not(:last-child) {
-      margin-bottom: toRem(20);
+      margin-bottom: toRem(17);
     }
   }
   p {

@@ -135,6 +135,7 @@ body::-webkit-scrollbar-track {
 [class*=__container] {
   max-width: 83.125rem;
   margin: 0 auto;
+  width: 100%;
   padding: 0 .9375rem
 }
 input[type=email],
@@ -491,7 +492,7 @@ body::after {
 }
 .num__item span:not(:last-child),
 .refill__item span:not(:last-child) {
-  margin-bottom: 1.25rem
+  margin-bottom: 1.0625rem
 }
 .num__item p,
 .refill__item p {
@@ -795,60 +796,30 @@ body::after {
   align-items: center;
   gap: .625rem
 }
-.fp-sec-00::-webkit-scrollbar,
-.fp-sec-01::-webkit-scrollbar,
-.fp-sec-02::-webkit-scrollbar,
-.fp-sec-03::-webkit-scrollbar,
-.fp-sec-04::-webkit-scrollbar,
-.fp-sec-05::-webkit-scrollbar,
-.fp-sec-06::-webkit-scrollbar,
-.fp-sec-07::-webkit-scrollbar,
-.fp-sec-08::-webkit-scrollbar {
+.fp-sec::-webkit-scrollbar {
   width: 6px
 }
-.fp-sec-00::-webkit-scrollbar-thumb,
-.fp-sec-01::-webkit-scrollbar-thumb,
-.fp-sec-02::-webkit-scrollbar-thumb,
-.fp-sec-03::-webkit-scrollbar-thumb,
-.fp-sec-04::-webkit-scrollbar-thumb,
-.fp-sec-05::-webkit-scrollbar-thumb,
-.fp-sec-06::-webkit-scrollbar-thumb,
-.fp-sec-07::-webkit-scrollbar-thumb,
-.fp-sec-08::-webkit-scrollbar-thumb {
+.fp-sec::-webkit-scrollbar-thumb {
   background-color: #000;
   border-radius: 15px
 }
-.fp-sec-00::-webkit-scrollbar-track,
-.fp-sec-01::-webkit-scrollbar-track,
-.fp-sec-02::-webkit-scrollbar-track,
-.fp-sec-03::-webkit-scrollbar-track,
-.fp-sec-04::-webkit-scrollbar-track,
-.fp-sec-05::-webkit-scrollbar-track,
-.fp-sec-06::-webkit-scrollbar-track,
-.fp-sec-07::-webkit-scrollbar-track,
-.fp-sec-08::-webkit-scrollbar-track {
+.fp-sec::-webkit-scrollbar-track {
   background-color: #fff
 }
-.fp-sec-00 section,
-.fp-sec-01 section,
-.fp-sec-02 section,
-.fp-sec-03 section,
-.fp-sec-04 section,
-.fp-sec-05 section,
-.fp-sec-06 section,
-.fp-sec-07 section,
-.fp-sec-08 section {
+.fp-sec section {
   overflow: hidden;
-  padding-top: 6.25rem;
+  display: flex;
+  align-items: center;
   min-height: 100%
 }
-.hero {
-  display: flex;
-  align-items: center
+.fp-sec .art .art__title {
+  padding: .625rem 0 1.25rem
 }
 .hero__container {
   position: relative;
-  z-index: 2;
+  z-index: 2
+}
+.hero__container:not(.fp-sec .hero__container) {
   padding-top: 6.25rem;
   padding-bottom: 6.25rem
 }
@@ -880,7 +851,7 @@ body::after {
   max-width: fit-content
 }
 .hero__head .txt-main {
-  text-align: left
+  text-align: left!important
 }
 .platforms__title {
   -webkit-background-clip: text;
@@ -986,8 +957,6 @@ body::after {
   object-fit: contain
 }
 .block-a {
-  display: flex;
-  align-items: center;
   background: linear-gradient(140deg,#ed7166 0,#d2baf9 60.5%)
 }
 .block-a__container {
@@ -1033,10 +1002,6 @@ body::after {
   border-radius: 50%;
   transition: background-color .3s ease
 }
-.benefits {
-  padding-top: 6.25rem;
-  padding-bottom: 6.25rem
-}
 .benefits__list {
   display: grid
 }
@@ -1058,7 +1023,6 @@ body::after {
   font-size: .875rem
 }
 .result__container {
-  padding-bottom: 6.25rem;
   position: relative;
   z-index: 2
 }
@@ -1078,7 +1042,7 @@ body::after {
   display: grid
 }
 .articles__body:not(:last-child) {
-  margin-bottom: 2.1875rem
+  margin-bottom: 1.25rem
 }
 .art__image {
   position: relative;
@@ -1108,18 +1072,12 @@ body::after {
   font-weight: 700;
   padding: .9375rem 0 1.25rem
 }
-.block-txt {
-  padding-bottom: 6.25rem
-}
 .block-txt__container {
   position: relative;
   z-index: 2
 }
 .block-txt__body:not(:last-child) {
   margin-bottom: 2.5rem
-}
-.refill {
-  padding-bottom: 6.25rem
 }
 .refill__list {
   display: grid;
@@ -1146,9 +1104,6 @@ body::after {
   text-align: center;
   opacity: .8
 }
-.how {
-  padding-bottom: 6.25rem
-}
 .how__container {
   position: relative;
   z-index: 2
@@ -1170,9 +1125,6 @@ body::after {
 }
 .how__item p {
   font-size: .875rem
-}
-.block-b {
-  padding-bottom: 6.25rem
 }
 .block-b__container {
   max-width: 62.5rem;
@@ -1197,9 +1149,6 @@ body::after {
   -webkit-transform: translate(0,-50%);
   transform: translate(0,-50%);
   background-image: linear-gradient(152deg,#ed7166 0,#d2baf9 60.5%)
-}
-.type {
-  padding-bottom: 3.75rem
 }
 .type__list {
   display: grid
@@ -1629,7 +1578,7 @@ body::after {
   .loc-footer {
     max-width: 85%
   }
-  .hero__container .txt-main {
+  .hero__container .txt-main:not(.hero__head .hero__container .txt-main) {
     text-align: center
   }
   .hero__container .title-main {
@@ -1637,33 +1586,29 @@ body::after {
   }
   .hero__container::before {
     left: 0;
-    -webkit-transform: translate(-50%,-24%);
-    transform: translate(-50%,-24%);
+    -webkit-transform: translate(-50%,35%);
+    transform: translate(-50%,35%);
     width: 16.375rem;
     height: 11.6875rem
   }
   .hero__container::after {
     bottom: 0;
-    -webkit-transform: translate(80%,0) rotate(30deg);
-    transform: translate(80%,0) rotate(30deg);
+    -webkit-transform: translate(80%,40%) rotate(30deg);
+    transform: translate(80%,40%) rotate(30deg);
     width: 18.75rem;
     height: 20rem
+  }
+  .hero__head .txt-main {
+    max-width: 20.3125rem
   }
   .hero__head {
     width: -webkit-fit-content;
     width: -moz-fit-content;
     width: fit-content;
-    max-width: 28.125rem;
     margin-inline: auto
   }
   .platforms__title {
     text-align: center
-  }
-  .platforms__title .title-pc {
-    display: inline-block
-  }
-  .platforms__title .title-mob {
-    display: none
   }
   .platforms__link {
     padding: 1.375rem .625rem
@@ -1967,6 +1912,12 @@ body::after {
   .nav-footer span {
     margin-bottom: 1.25rem
   }
+  .fp-sec section {
+    padding-top: 6.25rem
+  }
+  .fp-sec section {
+    padding-bottom: 6.25rem
+  }
   .hero__container .txt-main:not(:last-child) {
     margin-bottom: 2.5rem
   }
@@ -1990,9 +1941,6 @@ body::after {
   }
   .platforms__more {
     font-size: 1rem
-  }
-  .num__container {
-    padding-bottom: 6.25rem
   }
   .block-a__container {
     padding-top: 6.25rem
@@ -2182,11 +2130,11 @@ body::after {
   }
   .num__item,
   .refill__item {
-    padding-top: 1.6875rem
+    padding-top: 1.5625rem
   }
   .num__item,
   .refill__item {
-    padding-bottom: 2.5rem
+    padding-bottom: 2.1875rem
   }
   .num__item,
   .refill__item {
@@ -2236,28 +2184,31 @@ body::after {
   .footer__col-2 {
     gap: .625rem
   }
+  .fp-sec section {
+    padding-top: 4.375rem
+  }
+  .fp-sec section {
+    padding-bottom: 3.125rem
+  }
+  .fp-sec .art__image img {
+    aspect-ratio: 233/170
+  }
   .hero__container .txt-main {
     max-width: 85%
   }
   .hero__container::before {
     right: 0;
-    -webkit-transform: translate(60%,0) rotate(209deg);
-    transform: translate(60%,0) rotate(209deg);
+    -webkit-transform: translate(60%,50%) rotate(209deg);
+    transform: translate(60%,50%) rotate(209deg);
     width: 11.25rem;
     height: 11.25rem
   }
   .hero__container::after {
     top: 4.375rem;
-    -webkit-transform: translate(60%,0);
-    transform: translate(60%,0);
+    -webkit-transform: translate(60%,-60%);
+    transform: translate(60%,-60%);
     width: 7.8125rem;
     height: 10.9375rem
-  }
-  .platforms__title .title-pc {
-    display: none
-  }
-  .platforms__title .title-mob {
-    display: inline-block
   }
   .platforms__list {
     margin: 0 -.9375rem
@@ -2279,11 +2230,11 @@ body::after {
     height: 10.9375rem
   }
   .partners__list {
-    grid-template-columns: repeat(2,1fr);
-    row-gap: .3125rem
+    grid-template-columns: repeat(3,1fr);
+    justify-items: center
   }
   .partners__item {
-    padding: .625rem 1.25rem
+    padding: 0 .9375rem
   }
   .block-a__container::before {
     -webkit-transform: translate(-75%,100%);
@@ -2383,9 +2334,6 @@ body::after {
   }
   .platforms__more {
     font-size: .875rem
-  }
-  .num__container {
-    padding-bottom: 3.125rem
   }
   .block-a__container {
     padding-top: 4.375rem
@@ -2505,28 +2453,28 @@ body::after {
   }
 }
 @media (min-width:30.06125em) and (max-width:56.31125em) {
-  @supports (padding-top:clamp(1.6875rem ,0.3275863095rem + 4.5238095238vw ,2.875rem)) {
+  @supports (padding-top:clamp(1.5625rem ,0.0594375rem + 5vw ,2.875rem)) {
     .num__item,
     .refill__item {
-      padding-top: clamp(1.6875rem ,.3275863095rem + 4.5238095238vw ,2.875rem)
+      padding-top: clamp(1.5625rem ,.0594375rem + 5vw ,2.875rem)
     }
   }
-  @supports not (padding-top:clamp(1.6875rem ,0.3275863095rem + 4.5238095238vw ,2.875rem)) {
+  @supports not (padding-top:clamp(1.5625rem ,0.0594375rem + 5vw ,2.875rem)) {
     .num__item,
     .refill__item {
-      padding-top: calc(1.6875rem + 1.1875 * (100vw - 30.06125rem)/ 26.25)
+      padding-top: calc(1.5625rem + 1.3125 * (100vw - 30.06125rem)/ 26.25)
     }
   }
-  @supports (padding-bottom:clamp(2.5rem ,2.0705535714rem + 1.4285714286vw ,2.875rem)) {
+  @supports (padding-bottom:clamp(2.1875rem ,1.4001815476rem + 2.619047619vw ,2.875rem)) {
     .num__item,
     .refill__item {
-      padding-bottom: clamp(2.5rem ,2.0705535714rem + 1.4285714286vw ,2.875rem)
+      padding-bottom: clamp(2.1875rem ,1.4001815476rem + 2.619047619vw ,2.875rem)
     }
   }
-  @supports not (padding-bottom:clamp(2.5rem ,2.0705535714rem + 1.4285714286vw ,2.875rem)) {
+  @supports not (padding-bottom:clamp(2.1875rem ,1.4001815476rem + 2.619047619vw ,2.875rem)) {
     .num__item,
     .refill__item {
-      padding-bottom: calc(2.5rem + .375 * (100vw - 30.06125rem)/ 26.25)
+      padding-bottom: calc(2.1875rem + .6875 * (100vw - 30.06125rem)/ 26.25)
     }
   }
   @supports (padding-left:clamp(1.125rem ,0.5524047619rem + 1.9047619048vw ,1.625rem)) {
@@ -2693,16 +2641,6 @@ body::after {
   @supports not (font-size:clamp(0.875rem ,0.8212827381rem + 0.2380952381vw ,1rem)) {
     .platforms__more {
       font-size: calc(.875rem + .125 * (100vw - 22.56125rem)/ 52.5)
-    }
-  }
-  @supports (padding-bottom:clamp(3.125rem ,1.7820684524rem + 5.9523809524vw ,6.25rem)) {
-    .num__container {
-      padding-bottom: clamp(3.125rem ,1.7820684524rem + 5.9523809524vw ,6.25rem)
-    }
-  }
-  @supports not (padding-bottom:clamp(3.125rem ,1.7820684524rem + 5.9523809524vw ,6.25rem)) {
-    .num__container {
-      padding-bottom: calc(3.125rem + 3.125 * (100vw - 22.56125rem)/ 52.5)
     }
   }
   @supports (padding-top:clamp(4.375rem ,3.5692410714rem + 3.5714285714vw ,6.25rem)) {
@@ -2947,6 +2885,26 @@ body::after {
   }
 }
 @media (min-width:30.06125em) and (max-width:75.06125em) {
+  @supports (padding-top:clamp(4.375rem ,3.1224479167rem + 4.1666666667vw ,6.25rem)) {
+    .fp-sec section {
+      padding-top: clamp(4.375rem ,3.1224479167rem + 4.1666666667vw ,6.25rem)
+    }
+  }
+  @supports not (padding-top:clamp(4.375rem ,3.1224479167rem + 4.1666666667vw ,6.25rem)) {
+    .fp-sec section {
+      padding-top: calc(4.375rem + 1.875 * (100vw - 30.06125rem)/ 45)
+    }
+  }
+  @supports (padding-bottom:clamp(3.125rem ,1.0374131944rem + 6.9444444444vw ,6.25rem)) {
+    .fp-sec section {
+      padding-bottom: clamp(3.125rem ,1.0374131944rem + 6.9444444444vw ,6.25rem)
+    }
+  }
+  @supports not (padding-bottom:clamp(3.125rem ,1.0374131944rem + 6.9444444444vw ,6.25rem)) {
+    .fp-sec section {
+      padding-bottom: calc(3.125rem + 3.125 * (100vw - 30.06125rem)/ 45)
+    }
+  }
   @supports (gap:clamp(0.625rem ,0.3327378472rem + 0.9722222222vw ,1.0625rem)) {
     .articles__body {
       gap: clamp(.625rem ,.3327378472rem + .9722222222vw ,1.0625rem)

@@ -1,12 +1,4 @@
-.fp-sec-00,
-.fp-sec-01,
-.fp-sec-02,
-.fp-sec-03,
-.fp-sec-04,
-.fp-sec-05,
-.fp-sec-06,
-.fp-sec-07,
-.fp-sec-08 {
+.fp-sec {
   &::-webkit-scrollbar {
     width: 6px;
   }
@@ -22,35 +14,44 @@
   
  section {
   overflow: hidden;
-  padding-top: toRem(100);
-  min-height: 100%;
- }
-}
-
-
-.fp-sec-00 {}
-.fp-sec-01 {}
-.fp-sec-02 {}
-.fp-sec-03 {}
-.fp-sec-04 {}
-.fp-sec-05 {}
-.fp-sec-06 {}
-.fp-sec-07 {}
-
-.hero {
   display: flex;
   align-items: center;
+  @include adaptiveValue("padding-top", 100, 70,0,1200.98,480.98);
+  @include adaptiveValue("padding-bottom", 100, 50,0,1200.98,480.98);
+  min-height: 100%;
+ }
+
+ .art__image {
+  img {
+    @media (max-width:$mobileSmall){
+      aspect-ratio: 233/170;
+    }
+  }
+ }
+ .art {
+  .art__title {
+    padding: toRem(10) 0 toRem(20);
+  }
+  }
+
+}
+
+.hero {
   // .hero__container
   &__container {
     position: relative;
     z-index: 2;
-    padding-top: toRem(100);
-    padding-bottom: toRem(100);
+    &:not(.fp-sec &) {
+      padding-top: toRem(100);
+      padding-bottom: toRem(100);
+    }
 
   
     .txt-main {
       @media (min-width:$mobileSmall){
-         text-align: center; 
+        &:not(.hero__head &) {
+          text-align: center; 
+        }
       }
       @media (max-width:$mobileSmall){
          max-width: 85%; 
@@ -72,13 +73,13 @@
       background-image: url('../img/icons/el-x.svg');
       @media (min-width:$mobileSmall){
         left: 0;
-        transform: translate(-50%,-24%);
+        transform: translate(-50%,35%);
         width: toRem(262);
         height: toRem(187);
       }
       @media (max-width:$mobileSmall){
         right: 0;
-        transform: translate(60%,0%) rotate(209deg);
+        transform: translate(60%,50%) rotate(209deg);
         width: toRem(180);
         height: toRem(180);
       }
@@ -88,13 +89,13 @@
       background-image: url('../img/icons/el-2.svg');
       @media (min-width:$mobileSmall){
         bottom: 0;
-        transform: translate(80%,0%) rotate(30deg);
+        transform: translate(80%,40%) rotate(30deg);
         width: toRem(300);
         height: toRem(320);
       }
       @media (max-width:$mobileSmall){
         top: toRem(70);
-        transform: translate(60%,0%);
+        transform: translate(60%,-60%);
         width: toRem(125);
         height: toRem(175);
       }
@@ -117,11 +118,14 @@
       max-width: fit-content;
     }
     .txt-main {
-      text-align: left;
+      text-align: left !important;
+      @media (min-width:$mobileSmall){
+         max-width: toRem(325); 
+      }
     }
     @media (min-width:$mobileSmall){
       width: fit-content;
-      max-width: toRem(450);
+      // max-width: toRem(450);
       margin-inline: auto;
     }
     @media (max-width:$mobileSmall){
@@ -140,7 +144,6 @@
 
 // == PLATFORMS SECTION =======================================
 .platforms {
-  // padding-bottom: toRem(100);
   // .platforms__container
   &__container {
   }
@@ -156,22 +159,6 @@
     @include adaptiveValue("margin-bottom", 55,20,0,1200.98,360.98);
     @media (min-width:$mobileSmall){
        text-align: center; 
-    }
-    .title-pc {
-      @media (min-width:$mobileSmall){
-        display: inline-block;
-      }
-      @media (max-width:$mobileSmall){
-         display: none; 
-      }
-    }
-    .title-mob {
-      @media (min-width:$mobileSmall){
-         display: none; 
-      }
-      @media (max-width:$mobileSmall){
-         display: inline-block; 
-      }
     }
   }
   // .platforms__list
@@ -277,7 +264,7 @@
   // .num__container
   &__container {
     // padding-bottom: toRem(100);
-    @include adaptiveValue("padding-bottom", 100, 50,0,1200.98,360.98);
+    // @include adaptiveValue("padding-bottom", 100, 50,0,1200.98,360.98);
     position: relative;
     z-index: 2;
     .num-bg & {
@@ -380,15 +367,15 @@
       grid-template-columns:  repeat(auto-fit,minmax(140px, 1fr));
     }
     @media (max-width:$mobileSmall){
-      grid-template-columns: repeat(2,1fr);      
-      row-gap: toRem(5);
+      grid-template-columns: repeat(3,1fr);     
+      justify-items: center; 
     }
   }
   // .partners__item
   &__item {
     height: toRem(80);
     @media (max-width:$mobileSmall){
-      padding: toRem(10) toRem(20);
+      padding: toRem(0) toRem(15);
     }
     img {
       width: 100%;
@@ -401,8 +388,6 @@
 
 // == BLOCK-A SECTION =======================================
 .block-a {
-  display: flex;
-  align-items: center;
   background: linear-gradient(140deg, #ed7166 0%, #d2baf9 60.5%);
   // .block-a__container
   &__container {
@@ -520,8 +505,6 @@
 
 // == BENEFITS SECTION =======================================
 .benefits {
-  padding-top: toRem(100);
-  padding-bottom: toRem(100);
   // .benefits__container
   &__container {
   }
@@ -569,7 +552,7 @@
 .result {
   // .result__container
   &__container {
-    padding-bottom: toRem(100);
+    // padding-bottom: toRem(100);
     position: relative;
     z-index: 2;
     
@@ -627,7 +610,7 @@
       grid-template-columns: repeat(2,1fr);
     }
     &:not(:last-child) {
-      margin-bottom: toRem(35);
+      margin-bottom: toRem(20);
     }
   }
 	// .articles__link
@@ -689,12 +672,11 @@
 
 
 
-
 // === PAGES OTHER ===============================
 
 // == BLOCK-TXT ========================
 .block-txt {
-  padding-bottom: toRem(100);
+  // padding-bottom: toRem(100);
   // .block-txt__container
   &__container {
     position: relative;
@@ -756,7 +738,7 @@
 
 // == REFILL ========================
 .refill {
-  padding-bottom: toRem(100);
+  // padding-bottom: toRem(100);
   // .refill__container
   &__container {
   }
@@ -808,7 +790,7 @@
 
 // == HOW ========================
 .how {
-  padding-bottom: toRem(100);
+  // padding-bottom: toRem(100);
   // .how__container
   &__container {
     position: relative;
@@ -864,7 +846,7 @@
 
 // == BLOCK-B ========================
 .block-b {
-  padding-bottom: toRem(100);
+  // padding-bottom: toRem(100);
   // .block-b__container
   &__container {
     max-width: toRem(1000);
@@ -931,7 +913,7 @@
 
 // == TYPE ========================
 .type {
-  padding-bottom: toRem(60);
+  // padding-bottom: toRem(60);
   // .type__container
   &__container {
   }
