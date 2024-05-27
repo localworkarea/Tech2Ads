@@ -16,8 +16,10 @@
   overflow: hidden;
   display: flex;
   align-items: center;
-  @include adaptiveValue("padding-top", 100, 70,0,1200.98,480.98);
-  padding-bottom: toRem(50);
+  @include adaptiveValue("padding-top", 100, 80,2,1920.98,1366.98);
+  @include adaptiveValue("padding-top", 80, 70,3,1366.98,480.98);
+  // padding-bottom: toRem(50);
+  @include adaptiveValue("padding-bottom", 50, 20,0,1920,1366.98);
   // @include adaptiveValue("padding-bottom", 100, 50,0,1200.98,480.98);
   min-height: 100%;
  }
@@ -723,7 +725,7 @@
   // .block-txt__body
   &__body {
     @media (min-width:$mobile){
-       max-width: toRem(820);
+       max-width: toRem(920);
        margin-inline: auto;
        text-align: center;
     }
@@ -734,7 +736,7 @@
       }
     }
     &:not(:last-child) {
-      margin-bottom: toRem(40);
+      margin-bottom: toRem(30);
     }
   }
   // .block-txt__link
@@ -757,7 +759,7 @@
     justify-content: center;
     @include adaptiveValue("gap", 17, 14,0,768.98,360.98);
     &:not(:last-child) {
-      margin-bottom: toRem(50);
+      margin-bottom: toRem(30);
     }
     &.grid-3 {
       grid-template-columns:  repeat(auto-fit,minmax(toRem(200), 1fr));

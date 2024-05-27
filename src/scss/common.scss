@@ -118,7 +118,8 @@
      text-align: center; 
   }
   &:not(:last-child) {
-    @include adaptiveValue("margin-bottom", 50,30,0,1200.98,480.98);
+    @include adaptiveValue("margin-bottom", 50,30,0,1920.98,1366.98);
+    // @include adaptiveValue("margin-bottom", 50,30,3,1366.98,480.98);
   }
 }
 
