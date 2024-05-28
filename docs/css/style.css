@@ -848,6 +848,7 @@ body::after {
   overflow: hidden;
   display: flex;
   align-items: center;
+  padding-bottom: 3.125rem;
   min-height: 100%
 }
 .fp-sec .art .art__title {
@@ -1120,6 +1121,9 @@ body::after {
 .block-txt__body:not(:last-child) {
   margin-bottom: 1.875rem
 }
+.refill {
+  align-items: unset!important
+}
 .refill__list {
   display: grid;
   justify-content: center
@@ -1169,7 +1173,7 @@ body::after {
   font-size: .875rem
 }
 .block-b__container {
-  max-width: 62.5rem;
+  max-width: 68.75rem;
   display: grid
 }
 .block-b__container .title-ac {
@@ -1807,12 +1811,9 @@ body::after {
     grid-template-columns: repeat(3,1fr)
   }
   .block-b__container {
-    gap: 3.125rem;
+    gap: 1.25rem;
     align-items: center;
     grid-template-columns: 63% 1fr
-  }
-  .block-b__img img {
-    aspect-ratio: 329/361
   }
   .block-b__img::before {
     width: 105%;
@@ -2061,9 +2062,6 @@ body::after {
   .header__logo img {
     width: 4.375rem
   }
-  .fp-sec section {
-    padding-bottom: 3.125rem
-  }
 }
 @media (max-width:85.43625em) {
   .header__link,
@@ -2078,9 +2076,6 @@ body::after {
   }
   .header__logo img {
     width: 3.625rem
-  }
-  .fp-sec section {
-    padding-bottom: 1.25rem
   }
 }
 @media (max-width:64.06125em) {
@@ -2154,12 +2149,6 @@ body::after {
   }
   .block-b__container {
     gap: 4.375rem
-  }
-  .block-b__image {
-    padding-right: 1.5625rem
-  }
-  .block-b__img img {
-    aspect-ratio: 294/225
   }
   .block-b__img::before {
     width: 102%;
@@ -2541,16 +2530,6 @@ body::after {
   @supports not (width:clamp(3.625rem ,1.7711158728rem + 2.1699034393vw ,4.375rem)) {
     .header__logo img {
       width: calc(3.625rem + .75 * (100vw - 85.43625rem)/ 34.56375)
-    }
-  }
-  @supports (padding-bottom:clamp(1.25rem ,-3.3847103179rem + 5.4247585982vw ,3.125rem)) {
-    .fp-sec section {
-      padding-bottom: clamp(1.25rem ,-3.3847103179rem + 5.4247585982vw ,3.125rem)
-    }
-  }
-  @supports not (padding-bottom:clamp(1.25rem ,-3.3847103179rem + 5.4247585982vw ,3.125rem)) {
-    .fp-sec section {
-      padding-bottom: calc(1.25rem + 1.875 * (100vw - 85.43625rem)/ 34.56375)
     }
   }
 }
