@@ -1124,6 +1124,12 @@ body::after {
 .refill {
   align-items: unset!important
 }
+.refill .title-ac {
+  margin-bottom: .625rem!important
+}
+.refill .block-txt__body {
+  margin-bottom: .625rem!important
+}
 .refill__list {
   display: grid;
   justify-content: center
@@ -2321,6 +2327,9 @@ body::after {
   .refill.refill--grid-2 .refill__txt {
     font-size: .875rem!important
   }
+  .refill .refill__list.grid-2 {
+    gap: .5rem!important
+  }
   .refill .refill__list.grid-2:not(:last-child) {
     margin-bottom: 1.25rem!important
   }
@@ -2330,6 +2339,9 @@ body::after {
   }
   .refill .refill__list.grid-2 .refill__item span:not(:last-child) {
     margin-bottom: .5rem!important
+  }
+  .refill .refill__list.grid-2 .refill__item p {
+    font-size: .75rem!important
   }
   .how__container::before {
     display: none

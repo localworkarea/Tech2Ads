@@ -751,6 +751,12 @@
   align-items: unset !important;
   // padding-bottom: toRem(100);
   &.refill--grid-2 {}
+  .title-ac {
+    margin-bottom: toRem(10) !important;
+  }
+  .block-txt__body {
+    margin-bottom: toRem(10) !important;
+  }
   // .refill__container
   &__container {
   }
@@ -834,7 +840,7 @@
   .refill__list {
     &.grid-2 {
       @media (max-width:$mobileSmall){
-        // gap: toRem(8) !important;
+        gap: toRem(8) !important;
          &:not(:last-child) {
           margin-bottom: toRem(20) !important;
          }
@@ -850,7 +856,7 @@
             }
            }
            p {
-            // font-size: toRem(12) !important;
+            font-size: toRem(12) !important;
            }
         }
       }
