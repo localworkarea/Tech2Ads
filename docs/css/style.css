@@ -2318,14 +2318,8 @@ body::after {
   .refill.refill--grid-2 .block-txt__body {
     margin-bottom: 1.25rem
   }
-  .refill.refill--grid-2 .block-txt__body p {
-    font-size: .75rem!important
-  }
   .refill.refill--grid-2 .refill__txt {
-    font-size: .75rem!important
-  }
-  .refill .refill__list.grid-2 {
-    gap: .5rem!important
+    font-size: .875rem!important
   }
   .refill .refill__list.grid-2:not(:last-child) {
     margin-bottom: 1.25rem!important
@@ -2334,14 +2328,8 @@ body::after {
     padding-top: .75rem!important;
     padding-bottom: .75rem!important
   }
-  .refill .refill__list.grid-2 .refill__item span {
-    font-size: 1.125rem!important
-  }
   .refill .refill__list.grid-2 .refill__item span:not(:last-child) {
     margin-bottom: .5rem!important
-  }
-  .refill .refill__list.grid-2 .refill__item p {
-    font-size: .75rem!important
   }
   .how__container::before {
     display: none
